@@ -1,0 +1,54 @@
+/* Utility Classes */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--gradient-primary);
+  z-index: 1001;
+  transition: width 0.1s ease;
+}
+
+/* Smooth scrolling for the entire app */
+.site-root {
+  scroll-behavior: smooth;
+}
+
+/* World Map Background */
+.world-map-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='800' viewBox='0 0 1440 800'%3E%3Cpath fill='%232563eb' fill-opacity='0.08' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,197.3C960,171,1056,149,1152,165.3C1248,181,1344,235,1392,261.3L1440,288L1440,800L1392,800C1344,800,1248,800,1152,800C1056,800,960,800,864,800C768,800,672,800,576,800C480,800,384,800,288,800C192,800,96,800,48,800L0,800Z'%3E%3C/path%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='1' fill='%232563eb' fill-opacity='0.05'/%3E%3C/svg%3E");
+  background-size: cover, 20px 20px;
+  background-position: center, 0 0;
+  background-repeat: no-repeat, repeat;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.world-map-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(102, 126, 234, 0.07) 0%, transparent 50%),
+    linear-gradient(135deg, transparent 0%, rgba(248, 250, 252, 0.1) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ensure content stays above map */
+.site-root > *:not(.world-map-background):not(.world-map-overlay) {
+  position: relative;
+  z-index: 1;
+}

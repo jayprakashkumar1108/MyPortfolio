@@ -1,0 +1,335 @@
+/* Enhanced World Map Background */
+.world-map-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* Main world map with better visibility */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 800'%3E%3Cpath fill='%232563eb' fill-opacity='0.15' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,197.3C960,171,1056,149,1152,165.3C1248,181,1344,235,1392,261.3L1440,288L1440,800L1392,800C1344,800,1248,800,1152,800C1056,800,960,800,864,800C768,800,672,800,576,800C480,800,384,800,288,800C192,800,96,800,48,800L0,800Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.world-map-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 40% 80%, rgba(102, 126, 234, 0.09) 0%, transparent 60%),
+    linear-gradient(135deg, rgba(248, 250, 252, 0.3) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Professional Animation Styles */
+.professional-animation {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 200px;
+  height: 200px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.animation-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Programmer Silhouette */
+.programmer-silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 120px;
+}
+
+.head {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: headTilt 4s ease-in-out infinite;
+}
+
+@keyframes headTilt {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  25% { transform: translateX(-50%) rotate(-5deg); }
+  75% { transform: translateX(-50%) rotate(5deg); }
+}
+
+.body {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  background: var(--primary);
+  border-radius: 8px;
+}
+
+.arm-left, .arm-right {
+  position: absolute;
+  top: 35px;
+  width: 8px;
+  height: 30px;
+  background: var(--primary);
+  border-radius: 4px;
+  animation: typing 2s ease-in-out infinite;
+}
+
+.arm-left {
+  left: 15px;
+  transform-origin: top center;
+}
+
+.arm-right {
+  right: 15px;
+  transform-origin: top center;
+  animation-delay: 1s;
+}
+
+@keyframes typing {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-20deg); }
+}
+
+.laptop {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 30px;
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  animation: screenGlow 3s ease-in-out infinite;
+}
+
+@keyframes screenGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(37, 99, 235, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.6); }
+}
+
+/* Code Bubble */
+.code-bubble {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: var(--shadow-lg);
+  animation: floatUp 6s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateX(-50%) translateY(0px); opacity: 0.8; }
+  50% { transform: translateX(-50%) translateY(-10px); opacity: 1; }
+}
+
+.code-line {
+  height: 3px;
+  background: var(--primary);
+  margin-bottom: 4px;
+  border-radius: 2px;
+  animation: codeFlow 2s ease-in-out infinite;
+}
+
+.code-line:nth-child(1) { width: 40px; animation-delay: 0s; }
+.code-line:nth-child(2) { width: 30px; animation-delay: 0.2s; }
+.code-line:nth-child(3) { width: 35px; animation-delay: 0.4s; }
+.code-line:nth-child(4) { width: 25px; animation-delay: 0.6s; }
+
+@keyframes codeFlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Floating Elements */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  animation: floatAround 8s ease-in-out infinite;
+}
+
+.floating-element.react {
+  width: 12px;
+  height: 12px;
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.floating-element.node {
+  width: 8px;
+  height: 8px;
+  top: 60%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.floating-element.database {
+  width: 10px;
+  height: 10px;
+  top: 80%;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+.floating-element.server {
+  width: 6px;
+  height: 6px;
+  top: 40%;
+  left: 70%;
+  animation-delay: 6s;
+}
+
+@keyframes floatAround {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% { 
+    transform: translate(20px, -15px) rotate(90deg);
+    opacity: 1;
+  }
+  50% { 
+    transform: translate(-10px, -25px) rotate(180deg);
+    opacity: 0.7;
+  }
+  75% { 
+    transform: translate(-20px, 10px) rotate(270deg);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design for Animation */
+@media (max-width: 1024px) {
+  .professional-animation {
+    right: 30px;
+    bottom: 30px;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .programmer-silhouette {
+    width: 60px;
+    height: 90px;
+  }
+  
+  .head {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .body {
+    top: 20px;
+    width: 24px;
+    height: 40px;
+  }
+  
+  .laptop {
+    top: 60px;
+    width: 40px;
+    height: 24px;
+  }
+  
+  .code-bubble {
+    top: -60px;
+    padding: 8px;
+  }
+  
+  .code-line {
+    height: 2px;
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: 768px) {
+  .professional-animation {
+    display: none; /* Hide on mobile for better UX */
+  }
+}
+
+/* Ensure content stays above map and animation */
+.site-root > *:not(.world-map-background):not(.world-map-overlay):not(.professional-animation) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced Hero Section to accommodate animation */
+.hero {
+  padding: 140px 0 100px;
+  background: var(--gradient-hero);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(102, 126, 234, 0.03) 0%, transparent 50%);
+}
+
+/* Make sure world map is visible */
+.site-root {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Additional utility to ensure world map visibility */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, rgba(248, 250, 252, 0.1) 0%, transparent 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 800'%3E%3Cpath fill='%232563eb' fill-opacity='0.1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,197.3C960,171,1056,149,1152,165.3C1248,181,1344,235,1392,261.3L1440,288L1440,800L1392,800C1344,800,1248,800,1152,800C1056,800,960,800,864,800C768,800,672,800,576,800C480,800,384,800,288,800C192,800,96,800,48,800L0,800Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  opacity: 0.5;
+  pointer-events: none;
+}
